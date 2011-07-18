@@ -13,6 +13,7 @@
 (load "conf/ri-emacs")
 (load "conf/rubyonrails")
 (load "conf/cc")
+(load "conf/objc")
 (load "conf/auto-complete")
 (load "conf/snippets")
 (load "conf/cua")
