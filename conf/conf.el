@@ -1,3 +1,4 @@
+
 ;; 标记 改变mark
 ;; (global-set-key (kbd "C-x <SPC>") 'set-mark-command)
 ;; (global-set-key "\C-cm" 'set-mark-command)
@@ -5,7 +6,8 @@
 (global-set-key (kbd "C-c <SPC>") 'set-mark-command)
 (require 'ibuffer)
 
-
+;;去除scratch中默认显示信息
+(setq initial-scratch-message "")
 ;; 书签文件的路径及文件名
 (setq bookmark-save-flag t)
 ;; 自动保存/读取书签(setq default-fill-column 1000)
@@ -146,6 +148,8 @@
 ;; use backup directory
 ;;
 (defconst use-backup-dir t)
+
+(setq-default make-backup-files nil) 
 
 
 

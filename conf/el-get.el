@@ -11,24 +11,24 @@
   (url-retrieve
    "https://github.com/ChandleWEi/el-get/raw/master/el-get-install.el"
    (lambda (s)
-	 (end-of-buffer)
-	 (eval-print-last-sexp))))
+     (end-of-buffer)
+     (eval-print-last-sexp))))
 ;;(el-get 'sync)
 ;;local sources
 
 (setq el-get-sources
-	  '(package
-	    auto-complete
-	    auto-complete-clang		
-	    ac-company
-	    (:name rvm              :type elpa)		
-	    (:name company          :type elpa)
-	    (:name emacs-goodies-el :type elpa)
+      '(package
+		auto-complete
+		auto-complete-clang
+		ac-company
+		(:name rvm              :type elpa)		
+		(:name company          :type elpa)
+		(:name emacs-goodies-el :type elpa)
 		))
 
 (setq my-packages
- 	  (append
- 	   '(cssh
+      (append
+       '(cssh
 		 clang-completion-mode
 		 magit
 		 android-mode
@@ -62,8 +62,13 @@
 		 ;;session
 		 bm
 		 wcy-el
+		 auto-complete-css
+		 auto-complete-emacs-lisp
+		 auto-complete-ruby
+		 auto-complete-yasnippet
+		 
 		 )
- 	   (mapcar 'el-get-source-name el-get-sources)))
+       (mapcar 'el-get-source-name el-get-sources)))
 
 (el-get 'sync my-packages)
 ;;(el-get 'sync el-get-sources)

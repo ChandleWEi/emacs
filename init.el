@@ -12,6 +12,7 @@
 (load "conf/conf")
 (load "conf/cucumber")
 (load "conf/ri-emacs")
+(load "conf/ruby-mode") 
 (load "conf/rubyonrails")
 (load "conf/cc")
 (load "conf/objc")

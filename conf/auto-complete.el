@@ -23,27 +23,65 @@
 ;; 
 
 ;;; Code:
+
+;;auto-complete
+
+;; (require 'auto-complete-config)
+
+;; (ac-config-default)
+;; ;;(require 'gccsense)
+;; ;;(global-set-key "\257" (quote ac-complete-gccsense))
+;; ;;(global-set-key (kbd "M-/") 'ac-complete-gccsense)
+
+;; ;;auto-complete-clang
+
+;; (require 'auto-complete-clang)
+;; (setq clang-completion-suppress-error 't)
+
+;; (defun my-c-mode-common-hook()
+;;   (setq ac-auto-start nil)
+;;   (setq ac-expand-on-auto-complete nil)
+;;   (setq ac-quick-help-delay 0.3)
+;;   (define-key c-mode-base-map (kbd "M-/") 'ac-complete-clang)
+;; )
+
+;; (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
+
+(require 'auto-complete)
+(require 'ac-company)
 ;;(add-to-list 'load-path (concat myoptdir "AC"))
+(add-to-list 'load-path "~/.emacs.d/el-get/auto-complete")
 (require 'auto-complete-config)
 ;;(add-to-list 'ac-dictionary-directories (concat myoptdir "AC/ac-dict"))
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/el-get/auto-complete/ac-dict")
+
 
 (require 'auto-complete-clang)
+(require 'auto-complete-ruby)
+(setq clang-completion-suppress-error 't)
+
 
 (setq ac-auto-start nil)
-(setq ac-quick-help-delay 0.5)
+(setq ac-quick-help-delay 0.3)
+(setq ac-expand-on-auto-complete nil)
+(define-key c-mode-base-map (kbd "M-/") 'ac-complete-clang)
+(define-key ruby-mode-map (kbd "M-/") 'ac-start)
 ;; (ac-set-trigger-key "TAB")
 ;; (define-key ac-mode-map  [(control tab)] 'auto-complete)
-(define-key ac-mode-map  [(control tab)] 'auto-complete)
+;;(define-key ac-mode-map  [(control tab)] 'auto-complete)
 (defun my-ac-config ()
-  (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
+  (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers ac-source-yasnippet))
   (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
   ;; (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
   (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
   (add-hook 'css-mode-hook 'ac-css-mode-setup)
   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
   (global-auto-complete-mode t))
+
 (defun my-ac-cc-mode-setup ()
   (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
+
 (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
 ;; ac-source-gtags
 (my-ac-config)
@@ -51,11 +89,6 @@
 
 
 
-
-
-(require 'auto-complete)
-(require 'auto-complete-config)
-(require 'ac-company)
 (global-auto-complete-mode t)
 ;; ac-company 中设置 company-xcode 有效
 (ac-company-define-source ac-source-company-xcode company-xcode)
@@ -64,7 +97,7 @@
 ;; hook
 (add-hook 'objc-mode-hook
          (lambda ()
-           (define-key objc-mode-map (kbd "\t") 'ac-complete)
+           (define-key objc-mode-map (kbd "A-/") 'ac-complete)
            ;; 使用 XCode 的补全功能有效
            (push 'ac-source-company-xcode ac-sources)
            ;; C++ 关键词补全
@@ -82,5 +115,5 @@
 (setq ac-candidate-max 20)
 
 
-(provide 'auto-complete)
+
 ;;; auto-complete.el ends here
