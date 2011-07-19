@@ -19,6 +19,7 @@
 (setq el-get-sources
 	  '(package
 	    auto-complete
+	    auto-complete-clang		
 		ac-company
 	    (:name rvm              :type elpa)		
 	    (:name company          :type elpa)
@@ -28,6 +29,8 @@
 (setq my-packages
  	  (append
  	   '(cssh
+		 diff-git
+		 clang-completion-mode
 		 magit
 		 android-mode
 		 htmlize
