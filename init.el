@@ -1,4 +1,5 @@
 (load "conf/env")
+(load "conf/disabled")
 (load "conf/ido")
 (load "conf/mac")
 (load "conf/bindings")

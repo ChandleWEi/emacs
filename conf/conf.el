@@ -1,13 +1,19 @@
+;; 标记 改变mark
+;; (global-set-key (kbd "C-x <SPC>") 'set-mark-command)
+;; (global-set-key "\C-cm" 'set-mark-command)
+(global-set-key (kbd "C-<SPC>") 'nil)
+(global-set-key (kbd "C-c <SPC>") 'set-mark-command)
 (require 'ibuffer)
-;; 窗口布局保存
-;;(require 'desktop-frame)
+;; ;; 窗口布局保存
 (add-to-list 'load-path "~/.emacs.d/el-get/desktop-frame")
 (load "desktop-frame")
+;;(require 'desktop-frame)
 (add-hook 'desktop-save-hook
           (lambda ()
             (desktop-frame-save "~/.emacs.d")))
+(desktop-load-default)
 (desktop-read)
-(load "~/.emacs.d/.framex")
+;; (load "~/.emacs.d/.framex")
 
 
 ;; 书签文件的路径及文件名
@@ -49,11 +55,7 @@
 ;; (require 'hl-line)
 ;; or(hl-line-mode 1)
 (global-hl-line-mode 1)
-;; 标记 改变mark
-;; (global-set-key (kbd "C-x <SPC>") 'set-mark-command)
-;; (global-set-key "\C-cm" 'set-mark-command)
-(global-set-key (kbd "C-<SPC>") 'nil)
-(global-set-key (kbd "C-c <SPC>") 'set-mark-command)
+
 
 ;; 高亮中文到底么
 (transient-mark-mode t)

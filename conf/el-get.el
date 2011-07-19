@@ -20,7 +20,7 @@
 	  '(package
 	    auto-complete
 	    auto-complete-clang		
-		ac-company
+	    ac-company
 	    (:name rvm              :type elpa)		
 	    (:name company          :type elpa)
 	    (:name emacs-goodies-el :type elpa)
@@ -29,7 +29,6 @@
 (setq my-packages
  	  (append
  	   '(cssh
-		 diff-git
 		 clang-completion-mode
 		 magit
 		 android-mode

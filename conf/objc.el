@@ -23,7 +23,7 @@
 ;; 
 
 ;;; Code:
-
+(load-library "clang-completion-mode")
 ;; for object-c
 (add-to-list 'auto-mode-alist '("\\.m?$" . objc-mode))
 (add-to-list 'auto-mode-alist '("\\.mm?$" . objc-mode))
