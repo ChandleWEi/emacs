@@ -4,16 +4,6 @@
 (global-set-key (kbd "C-<SPC>") 'nil)
 (global-set-key (kbd "C-c <SPC>") 'set-mark-command)
 (require 'ibuffer)
-;; ;; 窗口布局保存
-(add-to-list 'load-path "~/.emacs.d/el-get/desktop-frame")
-(load "desktop-frame")
-;;(require 'desktop-frame)
-(add-hook 'desktop-save-hook
-          (lambda ()
-            (desktop-frame-save "~/.emacs.d")))
-(desktop-load-default)
-(desktop-read)
-;; (load "~/.emacs.d/.framex")
 
 
 ;; 书签文件的路径及文件名

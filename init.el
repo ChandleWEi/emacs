@@ -18,4 +18,6 @@
 (load "conf/auto-complete")
 (load "conf/snippets")
 (load "conf/cua")
+;always have bug so move to last
+(load "conf/desktop")			
 ;;(load "conf/tabs")
