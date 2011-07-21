@@ -21,6 +21,7 @@
 (load "conf/cua")
 ;always have bug so move to last
 (load "conf/desktop")
+(load "conf/grep")
 (load "conf/server-mode")
 ;; have bug can't fix it 
 ;;(load "conf/session")			
