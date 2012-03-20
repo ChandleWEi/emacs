@@ -1,2 +1,6 @@
 mv emacs ~/.emacs
 mv directory /opt/emacs
+add below to your ~/.emacs
+
+(add-to-list 'load-path "/opt/emacs")
+(load "init")

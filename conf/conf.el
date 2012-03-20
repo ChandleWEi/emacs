@@ -39,6 +39,7 @@
 ;;;;; winner 可以恢复前一个窗口的布局。比较有用。
 ;; ctrl-c left `winner-undo; ctrl-c right `winner-redo
 (winner-mode 1)
+(winner-mode t)
 ;;; 让emacs启动后变适合大小
 ;;; (setq default-frame-alist '((top . 0) (left . 640) (width . 68) (height . 28)))
 ;;; (setq initial-frame-alist '((top . 0) (left . 0) (width . 68) (height . 28)))
@@ -135,7 +136,16 @@
 ;; (setq backup-directory-alist '(("." . "~/emacs_backups")))
 (setq backup-directory-alist '((".*" . "~/.emacs.d/emacs_backups")))
 ;; change auto save file directory
-
+;; 自动保存nil
+(setq auto-save-default nil)
+;; 替换功能开启
+(delete-selection-mode t)
+;; 指针不要闪
+(blink-cursor-mode t)
+;; 括号匹配
+(show-paren-mode t)
+(set-fringe-style -1)
+(tooltip-mode -1)
 ;;备份设置方法，直接拷贝
 (setq version-control t)
 (setq kept-old-versions 2)
@@ -162,9 +172,6 @@
 (setq time-stamp-format "%:y-%02m-%02d %3a %02H:%02M:%02S K.T")
 
 
-
-(add-to-list 'load-path
-	     "/opt/emacs/extension")
 (desktop-save-mode 1)
 
 ;;; 自动关闭shell退出的buffer

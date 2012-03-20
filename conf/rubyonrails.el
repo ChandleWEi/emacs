@@ -7,8 +7,8 @@
 ;; (setq load-path (cons "/opt/emacs/extension/yaml-mode" load-path))
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-hook 'yaml-mode-hook
-      '(lambda ()
-        (define-key yaml-mode-map "\C-j" 'newline-and-indent)))
+		  '(lambda ()
+			 (define-key yaml-mode-map "\C-j" 'newline-and-indent)))
 
 
 (require 'rhtml-mode)
@@ -20,8 +20,17 @@
 (setq auto-mode-alist  (cons '("\\.rjs$" . ruby-mode) auto-mode-alist))
 (setq auto-mode-alist  (cons '("\\.rb$" . ruby-mode) auto-mode-alist))
 ;; (setq auto-mode-alist  (cons '("\\.rhtml$" . html-mode) auto-mode-alist))
+
+(add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru\\'" . ruby-mode))
+
 (add-to-list 'auto-mode-alist '("\\.rhtml$" . rhtml-mode))
+(add-to-list 'auto-mode-alist '("\\.rjs$" . rhtml-mode))
 (add-to-list 'auto-mode-alist '("\\.html\.erb$" . rhtml-mode))
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\(?:^\\|/\\)Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
 (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
