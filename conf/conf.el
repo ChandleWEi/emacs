@@ -10,15 +10,17 @@
 (setq initial-scratch-message "")
 ;; 书签文件的路径及文件名
 (setq bookmark-save-flag t)
-;; 自动保存/读取书签(setq default-fill-column 1000)
-;; 为了使emacs和x11下的应用程序可以互相粘贴，从网上找了如下代码
-(setq x-select-enable-clipboard t)
-(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+;;---------------disable in mac emacs24- start---------------
+;;;; 自动保存/读取书签(setq default-fill-column 1000)
+;;;; 为了使emacs和x11下的应用程序可以互相粘贴，从网上找了如下代码
+;;(setq x-select-enable-clipboard t)
+;;(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+;;---------------disable in mac emacs24--end--------------
 
 (global-set-key (kbd "M-i") 'imenu)
-;; 用当前缓冲中所定义的函数之类移动光标。imenu 自动的扫描所打开的文件，根据
-;; 内容以及相应的模式判断那些可以作为索引项。打开一个已经写的差不多的 C 文件，
-;; M-x imenu RET 试试。
+;;;; 用当前缓冲中所定义的函数之类移动光标。imenu 自动的扫描所打开的文件，根据
+;;;; 内容以及相应的模式判断那些可以作为索引项。打开一个已经写的差不多的 C 文件，
+;;;; M-x imenu RET 试试。
 
 (global-set-key (kbd "C-c C-o") 'occur)
 ;; occur 功能，列出当前 buffer 中匹配的行。如果你在 Emacs 阅读这篇说明，试试
@@ -40,10 +42,10 @@
 ;; ctrl-c left `winner-undo; ctrl-c right `winner-redo
 (winner-mode 1)
 (winner-mode t)
-;;; 让emacs启动后变适合大小
-;;; (setq default-frame-alist '((top . 0) (left . 640) (width . 68) (height . 28)))
-;;; (setq initial-frame-alist '((top . 0) (left . 0) (width . 68) (height . 28)))
-
+;;;;; 让emacs启动后变适合大小
+;;;;; (setq default-frame-alist '((top . 0) (left . 640) (width . 68) (height . 28)))
+;;;;; (setq initial-frame-alist '((top . 0) (left . 0) (width . 68) (height . 28)))
+;;
 ;; 高亮所在的行
 ;; (require 'hl-line)
 ;; or(hl-line-mode 1)
@@ -140,7 +142,7 @@
 (setq auto-save-default nil)
 ;; 替换功能开启
 (delete-selection-mode t)
-;; 指针不要闪
+;; 指针闪
 (blink-cursor-mode t)
 ;; 括号匹配
 (show-paren-mode t)
@@ -172,7 +174,6 @@
 (setq time-stamp-format "%:y-%02m-%02d %3a %02H:%02M:%02S K.T")
 
 
-(desktop-save-mode 1)
 
 ;;; 自动关闭shell退出的buffer
 (add-hook 'shell-mode-hook 'wcy-shell-mode-hook-func)

@@ -23,7 +23,7 @@
 ;; 
 
 ;;; Code:
-(add-hook 'window-setup-hook 'maximize-frame t)
+;;;(add-hook 'window-setup-hook 'maximize-frame t)
 
 ;;;;苹果键位remap  
 (setq mac-command-modifier 'meta) ;映射苹果键

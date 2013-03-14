@@ -1,9 +1,9 @@
-;;; desktop.el --- desktop-save
+;;; go.el --- 
 
-;; Copyright (C) 2011  Chandle Wei
+;; Copyright (C) 2013  Chandle WEi
 
-;; Author: Chandle Wei <>
-;; Keywords: abbrev
+;; Author: Chandle WEi <Chandle.WEi@gmail.com>
+;; Keywords: 
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -20,22 +20,12 @@
 
 ;;; Commentary:
 
-;; 
+;;
+(setq auto-mode-alist  (cons '("\\.go$" . go-mode) auto-mode-alist))
 
 ;;; Code:
-(desktop-save-mode 1)
-(desktop-save-mode t)
-(setq desktop-save-mode t)
 
-;; ;; 窗口布局保存
-(add-to-list 'load-path "~/.emacs.d/el-get/desktop-frame")
-(load "desktop-frame")
-;;(require 'desktop-frame)
-(add-hook 'desktop-save-hook
-          (lambda ()
-            (desktop-frame-save "~/.emacs.d")))
-(desktop-save-mode)
-(desktop-read)
-;; (load "~/.emacs.d/.framex")
 
-;;; desktop.el ends here
+
+(provide 'go-setup)
+;;; go.el ends here

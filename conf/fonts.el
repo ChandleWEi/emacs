@@ -1,6 +1,6 @@
 ;; 设置中文字体
 ;;  (set-default-font "Microsoft Yahei-10")
-(set-frame-font "Monaco-13")
+;;(set-frame-font "Monaco-13")
 ;; (set-fontset-font (frame-parameter nil 'font) 'han '("Microsoft Yahei" . "unicode-bmp"))
 ;;(add-to-list 'load-path "~/.emacs.d/el-get/color-theme")
 ;;(load-file "~/.emacs.d/el-get/color-theme/color-theme.el")
