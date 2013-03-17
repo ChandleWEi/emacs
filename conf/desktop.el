@@ -26,16 +26,16 @@
 (desktop-save-mode 1)
 (desktop-save-mode t)
 (setq desktop-save-mode t)
+;; can't use for emacs 24
+;; ;; ;; 窗口布局保存
+;; (add-to-list 'load-path "~/.emacs.d/el-get/desktop-frame")
+;; (load "desktop-frame")
+;; ;;(require 'desktop-frame)
+;; (add-hook 'desktop-save-hook
+;;           (lambda ()
+;;             (desktop-frame-save "~/.emacs.d")))
+;; (desktop-save-mode)
+;; (desktop-read)
+;; ;; (load "~/.emacs.d/.framex")
 
-;; ;; 窗口布局保存
-(add-to-list 'load-path "~/.emacs.d/el-get/desktop-frame")
-(load "desktop-frame")
-;;(require 'desktop-frame)
-(add-hook 'desktop-save-hook
-          (lambda ()
-            (desktop-frame-save "~/.emacs.d")))
-(desktop-save-mode)
-(desktop-read)
-;; (load "~/.emacs.d/.framex")
-
-;;; desktop.el ends here
+;; ;;; desktop.el ends here

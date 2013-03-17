@@ -11,8 +11,8 @@
 			 (define-key yaml-mode-map "\C-j" 'newline-and-indent)))
 
 
-(require 'rhtml-mode)
-(autoload 'rhtml-mode "rhtml-mode" "RHTML" t)
+;; (require 'rhtml-mode)
+;; (autoload 'rhtml-mode "rhtml-mode" "RHTML" t)
 
 (global-set-key (kbd "C-m") 'ruby-reindent-then-newline-and-indent )
 (autoload 'ruby-mode "ruby-mode" "Ruby editing mode." t)
@@ -26,9 +26,9 @@
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ru\\'" . ruby-mode))
 
-(add-to-list 'auto-mode-alist '("\\.rhtml$" . rhtml-mode))
-(add-to-list 'auto-mode-alist '("\\.rjs$" . rhtml-mode))
-(add-to-list 'auto-mode-alist '("\\.html\.erb$" . rhtml-mode))
+;; (add-to-list 'auto-mode-alist '("\\.rhtml$" . rhtml-mode))
+;; (add-to-list 'auto-mode-alist '("\\.rjs$" . rhtml-mode))
+;; (add-to-list 'auto-mode-alist '("\\.html\.erb$" . rhtml-mode))
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\(?:^\\|/\\)Rakefile$" . ruby-mode))
@@ -42,7 +42,7 @@
 (autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mode")
 (autoload 'rubydb "rubydb3x" "Ruby debugger" t)
 (modify-coding-system-alist 'file "\\.rb$" 'utf-8)
-(modify-coding-system-alist 'file "\\.rhtml$" 'utf-8)
+;; (modify-coding-system-alist 'file "\\.rhtml$" 'utf-8)
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Like c-in-literal, only for Ruby
 (defun ruby-in-literal ()
@@ -105,8 +105,8 @@
 
 ;; Add the Unit::Test output to the list of regexps understood by the
 ;; compile buffer
-(add-to-list 'compilation-error-regexp-alist
-             '("\\(\\./[^:]*\\):\\([0-9]*\\)" 1 2))
+;(add-to-list 'compilation-error-regexp-alist
+             ;'("\\(\\./[^:]*\\):\\([0-9]*\\)" 1 2))
 ;; (REGEXP FILE-IDX LINE-IDX
 										;(setq compilation-error-regexp-alist (cdr compilation-error-regexp-alist))
 
@@ -138,33 +138,33 @@
 
 ;; mmm-mode setup
 ;; (setq load-path (cons "/opt/emacs/extension/mmm-mode" load-path))
-(require 'mmm-mode)
-(require 'mmm-auto)
+;;(require 'mmm-mode)
+;;(require 'mmm-auto)
 (setq mmm-global-mode 'maybe)
 (setq mmm-submode-decoration-level 2)
 
-(set-face-background 'mmm-output-submode-face  "#4D0000")
-(set-face-background 'mmm-code-submode-face    "#9F5000")
+;;(set-face-background 'mmm-output-submode-face  "#4D0000")
+;;(set-face-background 'mmm-code-submode-face    "#9F5000")
 ;;(set-face-background 'mmm-code-submode-face    "#272727")
 ;;(set-face-background 'mmm-comment-submode-face "lightblue")
-(set-face-background 'mmm-comment-submode-face "#6C3365")
-(mmm-add-classes
- '((erb-code
-    :submode ruby-mode
-    :match-face (("<%#" . mmm-comment-submode-face)
-                 ("<%=" . mmm-output-submode-face)
-                 ("<%"  . mmm-code-submode-face))
-    :front "<%[#=]?"
-    :back "-?%>"
-    :insert ((?% erb-code       nil @ "<%"  @ " " _ " " @ "%>" @)
-             (?# erb-comment    nil @ "<%#" @ " " _ " " @ "%>" @)
-             (?= erb-expression nil @ "<%=" @ " " _ " " @ "%>" @))
-    )))
-(add-hook 'rhtml-mode-hook
-          (lambda ()
-            (set (make-local-variable 'comment-auto-fill-only-comments) t)
-            (setq mmm-classes '(erb-code))
-            (mmm-mode-on)))
+;;(set-face-background 'mmm-comment-submode-face "#6C3365")
+;;(mmm-add-classes
+;; '((erb-code
+;;    :submode ruby-mode
+;;    :match-face (("<%#" . mmm-comment-submode-face)
+;;                 ("<%=" . mmm-output-submode-face)
+;;                 ("<%"  . mmm-code-submode-face))
+;;    :front "<%[#=]?"
+;;    :back "-?%>"
+;;    :insert ((?% erb-code       nil @ "<%"  @ " " _ " " @ "%>" @)
+;;             (?# erb-comment    nil @ "<%#" @ " " _ " " @ "%>" @)
+;;             (?= erb-expression nil @ "<%=" @ " " _ " " @ "%>" @))
+;;    )))
+;; (add-hook 'rhtml-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'comment-auto-fill-only-comments) t)
+;;             (setq mmm-classes '(erb-code))
+;;             (mmm-mode-on)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Hide-show
