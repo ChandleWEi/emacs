@@ -46,27 +46,29 @@
 ;; )
 
 ;; (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
-
+(load "/opt/emacs/conf/go-autocomplete.el")
+(require 'go-autocomplete)
+(require 'auto-complete-config)
 
 (require 'auto-complete)
-(require 'ac-company)
+;; (require 'ac-company)
 ;;(add-to-list 'load-path (concat myoptdir "AC"))
-(add-to-list 'load-path "~/.emacs.d/el-get/auto-complete")
-(require 'auto-complete-config)
+;; (add-to-list 'load-path "~/.emacs.d/el-get/auto-complete")
+;; (require 'auto-complete-config)
 ;;(add-to-list 'ac-dictionary-directories (concat myoptdir "AC/ac-dict"))
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/el-get/auto-complete/ac-dict")
+;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/el-get/auto-complete/ac-dict")
 
 
-(require 'auto-complete-clang)
-(require 'auto-complete-ruby)
+;; (require 'auto-complete-clang)
+;; (require 'auto-complete-ruby)
 (setq clang-completion-suppress-error 't)
 
 
 (setq ac-auto-start nil)
 (setq ac-quick-help-delay 0.3)
 (setq ac-expand-on-auto-complete nil)
-(define-key c-mode-base-map (kbd "M-/") 'ac-complete-clang)
-(define-key ruby-mode-map (kbd "M-/") 'ac-start)
+;; (define-key c-mode-base-map (kbd "M-/") 'ac-complete-clang)
+;; (define-key ruby-mode-map (kbd "M-/") 'ac-start)
 ;; (ac-set-trigger-key "TAB")
 ;; (define-key ac-mode-map  [(control tab)] 'auto-complete)
 ;;(define-key ac-mode-map  [(control tab)] 'auto-complete)
@@ -91,7 +93,7 @@
 
 (global-auto-complete-mode t)
 ;; ac-company 中设置 company-xcode 有效
-(ac-company-define-source ac-source-company-xcode company-xcode)
+;; (ac-company-define-source ac-source-company-xcode company-xcode)
 ;; 设定 objc-mode 中补全 ac-mode
 (setq ac-modes (append ac-modes '(objc-mode)))
 ;; hook

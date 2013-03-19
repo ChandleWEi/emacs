@@ -1,12 +1,12 @@
 
-
+(load "conf/elpa")
 (load "conf/env")
 (load "conf/mac")
 (load "conf/disabled")
 (load "conf/conf")
-(load "conf/elpa")
+
 (load "conf/scratch")
-(load "conf/ido")
+;;(load "conf/ido")
 (load "conf/fonts")
 (load "conf/defuns")
 (load "conf/template")
@@ -15,12 +15,14 @@
 ;;(load "conf/bookmark")
 (load "conf/session")
 ;; for go language
+(load "conf/auto-complete")
 (add-hook 'before-save-hook 'gofmt-before-save)
 
 
+
 ;  (require 'google-translate)
-  (global-set-key "\C-ct" 'google-translate-at-point)
-  (global-set-key "\C-cT" 'google-translate-query-translate)
+(global-set-key "\C-ct" 'google-translate-at-point)
+(global-set-key "\C-cT" 'google-translate-query-translate)
 
 
 
@@ -41,7 +43,7 @@
 ;(load "conf/cucumber")
 ;(load "conf/cc")
 ;(load "conf/objc")
-;(load "conf/auto-complete")
+
 ;(load "conf/cua")
 
 
