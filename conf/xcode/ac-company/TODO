@@ -1,0 +1,12 @@
+- complete ignore list
+- etags, ctags
+- emacswiki
+- test facility
+- support composed chars
+- minibuffer completion
+- dictionary
+- documentation
+- performance issue (cache issue)
+- icon
+- asynchronous processing
+- kanji henkan support

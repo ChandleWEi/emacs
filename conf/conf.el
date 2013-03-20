@@ -60,9 +60,9 @@
 ;; (setq default-tab-width 4)
 (setq tab-width 4)
 ;;防止页面滚动时跳动
- (setq scroll-step 1
-       scroll-margin 3
-       scroll-conservatively 10000)
+;; (setq scroll-step 1
+;;       scroll-margin 3
+;;       scroll-conservatively 10000)
 ;; (add-hook 'text-mode-hook 'turn-on-auto-fill) 
 ;; 去除工具栏
 ;; (tool-bar-mode nil)
@@ -220,6 +220,9 @@
 (global-set-key (kbd "C-c c w") 'copy-word)
 (global-set-key (kbd "C-c c l") 'copy-line)
 (global-set-key (kbd "C-c c p") 'copy-paragraph)
+
+
+
 
 
 ;; This should not be enabled by default; either you are activating it in

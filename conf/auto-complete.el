@@ -38,12 +38,6 @@
 ;; (require 'auto-complete-clang)
 ;; (setq clang-completion-suppress-error 't)
 
-;; (defun my-c-mode-common-hook()
-;;   (setq ac-auto-start nil)
-;;   (setq ac-expand-on-auto-complete nil)
-;;   (setq ac-quick-help-delay 0.3)
-;;   (define-key c-mode-base-map (kbd "M-/") 'ac-complete-clang)
-;; )
 
 ;; (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 (load "/opt/emacs/conf/go-autocomplete.el")
@@ -51,16 +45,36 @@
 (require 'auto-complete-config)
 
 (require 'auto-complete)
-;; (require 'ac-company)
+
 ;;(add-to-list 'load-path (concat myoptdir "AC"))
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/auto-complete")
 ;; (require 'auto-complete-config)
 ;;(add-to-list 'ac-dictionary-directories (concat myoptdir "AC/ac-dict"))
 ;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/el-get/auto-complete/ac-dict")
 
+(add-to-list 'load-path "/opt/emacs/conf/xcode/ac-company")
+(add-to-list 'load-path "/opt/emacs/conf/xcode/rcodetools")
+(add-to-list 'load-path "/opt/emacs/conf/xcode/auto-complete-clang")
+(add-to-list 'load-path "/opt/emacs/conf/xcode/auto-complete-ruby")
+(add-to-list 'load-path "/opt/emacs/conf/xcode/auto-complete-yasnippet")
+(add-to-list 'load-path "/opt/emacs/conf/xcode/css")
+(add-to-list 'load-path "/opt/emacs/conf/xcode/emacs-lisp")
+(require 'ac-company)
+(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete/ac-dict")
+(require 'auto-complete-clang)
+(require 'auto-complete-ruby)
 
-;; (require 'auto-complete-clang)
-;; (require 'auto-complete-ruby)
+;; (defun my-c-mode-common-hook()
+;;   (setq ac-auto-start nil)
+;;   (setq ac-expand-on-auto-complete nil)
+;;   (setq ac-quick-help-delay 0.3)
+;;   (define-key c-mode-base-map (kbd "M-/") 'ac-complete-clang)
+;; )
+
+
+
 (setq clang-completion-suppress-error 't)
 
 
@@ -69,13 +83,13 @@
 (setq ac-expand-on-auto-complete nil)
 ;; (define-key c-mode-base-map (kbd "M-/") 'ac-complete-clang)
 ;; (define-key ruby-mode-map (kbd "M-/") 'ac-start)
-;; (ac-set-trigger-key "TAB")
-;; (define-key ac-mode-map  [(control tab)] 'auto-complete)
-;;(define-key ac-mode-map  [(control tab)] 'auto-complete)
+(ac-set-trigger-key "TAB")
+(define-key ac-mode-map  [(control tab)] 'auto-complete)
+(define-key ac-mode-map  [(control tab)] 'auto-complete)
 (defun my-ac-config ()
   (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers ac-source-yasnippet))
   (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
-  ;; (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+  (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
   (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
   (add-hook 'css-mode-hook 'ac-css-mode-setup)
   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
@@ -93,7 +107,7 @@
 
 (global-auto-complete-mode t)
 ;; ac-company 中设置 company-xcode 有效
-;; (ac-company-define-source ac-source-company-xcode company-xcode)
+(ac-company-define-source ac-source-company-xcode company-xcode)
 ;; 设定 objc-mode 中补全 ac-mode
 (setq ac-modes (append ac-modes '(objc-mode)))
 ;; hook

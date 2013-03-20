@@ -6,7 +6,7 @@
 (load "conf/conf")
 
 (load "conf/scratch")
-;;(load "conf/ido")
+(load "conf/ido")
 (load "conf/fonts")
 (load "conf/defuns")
 (load "conf/template")
