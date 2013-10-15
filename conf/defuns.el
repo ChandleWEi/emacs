@@ -1,7 +1,10 @@
 (defun insert-current_time ()
   (interactive)
   (insert (format-time-string "%Y-%m-%d %H:%M:%S" (current-time))))
-
+(defun insert-current_red()
+    (interactive)
+    (insert "<b style=\"color:red\">"))
+(global-set-key (kbd "C-c i b") 'insert-current_red)
 (global-set-key (kbd "C-c i t") 'insert-current_time)
 (global-set-key (kbd "C-c i r") "#!/usr/bin/env ruby")
 ;; 设置两边mark加上符号

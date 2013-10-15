@@ -24,8 +24,9 @@
 (global-set-key "\C-ct" 'google-translate-at-point)
 (global-set-key "\C-cT" 'google-translate-query-translate)
 
-
-
+(smart-tabs-insinuate 'c 'javascript)
+(smart-tabs-advice js2-indent-line js2-basic-offset)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (load "conf/rubyonrails")
 
