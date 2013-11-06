@@ -1,8 +1,8 @@
-;;; Environment variables
-(add-to-list 'exec-path "~/Gentoo/usr/bin")
+;; ;;; Environment variables
+;; (add-to-list 'exec-path "~/Gentoo/usr/bin")
 
-(setq exec-path (cons "~/Gentoo/usr/bin" exec-path))
-(setenv "PATH" (concat "~/Gentoo/usr/bin:" (getenv "PATH")))
+;; (setq exec-path (cons "~/Gentoo/usr/bin" exec-path))
+;; (setenv "PATH" (concat "~/Gentoo/usr/bin:" (getenv "PATH")))
 
 (setq exec-path (cons "/usr/local/bin" exec-path))
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))

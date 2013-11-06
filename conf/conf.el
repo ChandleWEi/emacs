@@ -117,7 +117,7 @@
 (add-hook 'java-mode-hook 'hs-minor-mode)
 (add-hook 'perl-mode-hook 'hs-minor-mode)
 (add-hook 'php-mode-hook 'hs-minor-mode)
-(add-hook 'ruby-mode-hook 'hs-minor-mode)
+(add-hook 'enhanced-ruby-mode-hook 'hs-minor-mode)
 (add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
 ;; 隐藏块显示块
 (global-set-key (kbd "C-c ll") 'hs-toggle-hiding)

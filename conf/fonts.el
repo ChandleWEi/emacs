@@ -7,10 +7,10 @@
 ;;(require 'color-theme)
 ;;(color-theme-initialize)
 
-(add-to-list 'load-path "~/.emacs.d/el-get/color-theme")
+;;(add-to-list 'load-path "~/.emacs.d/el-get/color-theme")
 (require 'color-theme)
 (color-theme-initialize)
-(add-to-list 'load-path "~/.emacs.d/el-get/color-theme-twilight")
+(add-to-list 'load-path "/opt/emacs/helpers/color-theme-twilight")
 (require 'color-theme-twilight)
 (color-theme-twilight)
 ;;; (set-default-font "Apple Monaco-9")
